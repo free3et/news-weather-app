@@ -47,7 +47,7 @@ const [country, category, search, getCategory, getCountry, getSearchNews] = useS
               )}
               {search !== "" && (
                 <>
-                  <h2>Search results "{search}"</h2>
+                  <h2>Search results &ldquo;{search}&ldquo;</h2>
                   <NewsListSearch search={search}/>
                 </>
               )}
