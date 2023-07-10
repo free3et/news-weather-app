@@ -6,6 +6,7 @@ import { NewsListSearch } from './components/NewsComponent/NewsListSearch';
 import { TopNews } from './components/NewsComponent/TopNews';
 import stylesLayout from "./Layout.module.scss";
 import './common.scss';
+import { InputWeatherComponent } from './components/WeatherComponent/InputWeatherComponent';
 import { useState } from 'react';
 
 export default function Home() {
@@ -62,8 +63,8 @@ const [search, setSearchNews] = useState("");
             <div
               className={`${stylesLayout.weather_currency_wrapper} col-md-12 col-sm-12 col-lg-3 col-12`}
             >
-              {/* <WeatherPage />
-              <Currency /> */}
+              <InputWeatherComponent />
+              {/* <Currency /> */}
             </div>
           </div>
         </div>

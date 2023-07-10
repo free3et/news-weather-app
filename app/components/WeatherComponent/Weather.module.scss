@@ -1,0 +1,96 @@
+@import '../../common.scss';
+
+.weather {
+  background-color: $color_blue;
+  color: $color_white;
+
+  &__search {
+    padding: 15px 15px 0 15px;
+  }
+
+  &__input {
+    border: none;
+    width: 270px;
+    background-color: $color_main;
+    text-align: center;
+    padding: 7px 0;
+    font-size: 20px;
+    font-weight: bold;
+    color: $color_white;
+
+    &::placeholder {
+      color: $color_grey;
+      font-weight: normal;
+      font-size: 15px;
+    }
+  }
+}
+
+.location {
+
+  &__wrapper {
+    margin-left: -10px;
+  }
+
+  &__img {
+    margin-top: -35px;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-around;
+    font-size: 25px;
+    font-weight: bold;
+    margin: 0;
+    padding: 10px 0;
+    color: $color_dark_grey;
+    margin-bottom: -30px;
+
+    p {
+      margin: 3px;
+    }
+  }
+
+  &__bot {
+    display: flex;
+    justify-content: space-around;
+    color: $color_black;
+    background-color: $color_white;
+    margin: 0 -9px 5px -9px;
+  }
+
+  &__header_title {
+    margin-right: 20px;
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $color_dark_grey;
+    max-height: 30px;
+
+    p {
+      margin: 3px 6px;
+    }
+
+    &_date {
+      font-size: 18px;
+      color: $color_black;
+      display: flex;
+      align-items: inherit;
+    }
+  }
+}
+
+.container {
+  padding: 10px;
+}
+
+@media (max-width: 576px) {
+  .pressure,
+  .speed {
+    display: none;
+  }
+}
+
