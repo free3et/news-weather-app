@@ -2,7 +2,11 @@
 import { useState } from "react";
 import styles from "./News.module.scss";
 
-export const SearchNews = ({ getSearchNews }) => {
+type GetSearchNews = {
+  getSearchNews: (item: string) => void
+}
+
+export const SearchNews = ({ getSearchNews }: GetSearchNews) => {
   const [value, setValue] = useState("");
 
   return (

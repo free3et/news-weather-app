@@ -4,11 +4,10 @@ import { Loader } from "../Loader/Loader";
 import { usePagination } from "../Pagination/usePagination";
 import "../Pagination/Pagination.css";
 import { NewsComponent } from "./NewsComponent";
+import { Post } from "./types";
 
-export const NewsListSearch = ({search}) => {
+export const NewsListSearch = ({search}: {search: string}) => {
   const { data = [], isLoading, isError, isSuccess, error } = useGetSearchPostsQuery(search);
-  console.log(data);
-
 
   // Pagination
   const {
@@ -67,7 +66,7 @@ export const NewsListSearch = ({search}) => {
             isSuccess &&
             data.response?.docs
               .slice(firstContentIndex, lastContentIndex)
-              .map((post, index) => (
+              .map((post: Post, index: number) => (
                 <NewsComponent post={post} key={index} className={`col-12 col-md-6 col-lg-4`} />
               ))}
         </section>

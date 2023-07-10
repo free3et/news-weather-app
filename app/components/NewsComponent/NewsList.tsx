@@ -4,14 +4,11 @@ import styles from "./News.module.scss";
 import { Loader } from "../Loader/Loader";
 import { usePagination } from "../Pagination/usePagination";
 import "../Pagination/Pagination.css";
+import { Post } from "./types";
 
-export const NewsList = ({category, country, search}) => {
-  const news = {
-    category,
-    country,
-  };
+export const NewsList = ({category, search}: {category: string, search: string}) => {
 
-  const { data = [], isLoading, isError, isSuccess, error } = useGetAllPostsQuery(news);
+  const { data = [], isLoading, isError, isSuccess, error } = useGetAllPostsQuery(category);
 
   // Pagination
 
@@ -43,7 +40,7 @@ export const NewsList = ({category, country, search}) => {
             </button>
             {gaps.before ? "..." : null}
 
-            {gaps.paginationGroup.map((el) => (
+            {gaps.paginationGroup.map((el: number) => (
               <button
                 onClick={() => setPage(el)}
                 key={el}
@@ -72,7 +69,7 @@ export const NewsList = ({category, country, search}) => {
             search === "" &&
             data.response?.docs
               .slice(firstContentIndex, lastContentIndex)
-              .map((post, index) => (
+              .map((post: Post, index: number) => (
                 <NewsComponent
                   post={post}
                   key={index}

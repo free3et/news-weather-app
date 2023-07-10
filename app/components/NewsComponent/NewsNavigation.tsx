@@ -1,7 +1,6 @@
 import styles from "./News.module.scss";
-//import { useState } from "react";
 
-const category: Category = {
+const category: Categories = {
   business: "business",
   education: "education",
   world: "world",
@@ -11,21 +10,22 @@ const category: Category = {
   technology: "technology",
 };
 
-type Category = {
+type Categories = {
   [key: string]: string,
 }
 
-export const NewsNavigation = ({ getCategory }) => {
-  //const [target, setTarget] = useState("");
+type GetCategory = {
+  getCategory: (item: string) => void
+}
 
+export const NewsNavigation = ({ getCategory }: GetCategory) => {
   return (
-    <div /* onClick={(e) => setTarget(e.target)} */ className={`${styles.news_navigation} col-lg-12`}>
+    <div className={`${styles.news_navigation} col-lg-12`}>
       {Object.values(category).map((item, index) => (
         <a
           href={`#${item}`}
           key={index}
           onClick={() => getCategory(item)}
-          /* className={target.innerText === item ? "active" : ""} */
         >
           {item}
         </a>

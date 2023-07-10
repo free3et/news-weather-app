@@ -1,26 +1,49 @@
 'use client'
 import { useState, useEffect } from "react";
 
-export const usePagination = ({ contentPerPage, count }) => {
+interface UsePaginationProps {
+  contentPerPage: number,
+  count: number,
+}
+
+interface Gaps {
+  before: boolean,
+  paginationGroup: number[],
+  after: boolean
+}
+
+interface UsePaginationReturn {
+  page: number;
+  totalPages: number;
+  firstContentIndex: number;
+  lastContentIndex: number;
+  nextPage: () => void;
+  prevPage: () => void;
+  setPage: (page: number) => void;
+  gaps: Gaps,
+}
+
+export const usePagination  = ({ contentPerPage, count }: UsePaginationProps): UsePaginationReturn => {
   const [page, setPage] = useState(1);
   // like 3 dots that surrounds the immediate pages
-  const [gaps, setGaps] = useState({
+  const [gaps, setGaps] = useState<Gaps>({
     before: false,
     paginationGroup: [],
     after: true,
   });
   // number of pages in total (total items / content on each page)
-  const pageCount = Math.ceil(count / contentPerPage);
+  const pageCount: number = Math.ceil(count / contentPerPage);
   // index of last item of current page
-  const lastContentIndex = page * contentPerPage;
+  const lastContentIndex: number = page * contentPerPage;
   // index of first item of current page
-  const firstContentIndex = lastContentIndex - contentPerPage;
+  const firstContentIndex: number = lastContentIndex - contentPerPage;
   //Pages between the first and last pages
-  const [pagesInBetween, setPagesInBetween] = useState([]);
+  const [pagesInBetween, setPagesInBetween] = useState<number[]>([]);
 
   useEffect(() => {
     if (pageCount > 2) {
-      const temp = new Array(pageCount - 2).fill(1).map((_, i) => i + 2);
+      const temp: number[] = new Array(pageCount - 2).fill(1).map((_, i) => i + 2);
+
       setPagesInBetween(temp);
     }
   }, [pageCount]);
@@ -28,8 +51,8 @@ export const usePagination = ({ contentPerPage, count }) => {
   // to set the pages between the gaps depending on position of current page
   //and to setGaps Depending on position of current page
   useEffect(() => {
-    const currentLocation = pagesInBetween.indexOf(page);
-    let paginationGroup = [];
+    const currentLocation: number = pagesInBetween.indexOf(page);
+    let paginationGroup: number[] = [];
     let before = false;
     let after = false;
     if (page === 1) {
@@ -58,7 +81,7 @@ export const usePagination = ({ contentPerPage, count }) => {
   }, [page, pagesInBetween, pageCount]);
 
   // change page based on direction either front or back
-  const changePage = (direction) => {
+  const changePage = (direction: boolean) => {
     setPage((state) => {
       // move forward
       if (direction) {
@@ -78,7 +101,7 @@ export const usePagination = ({ contentPerPage, count }) => {
     });
   };
 
-  const setPageSAFE = (num) => {
+  const setPageSAFE = (num: number) => {
     // if number is greater than number of pages, set to last page
     if (num > pageCount) {
       setPage(pageCount);

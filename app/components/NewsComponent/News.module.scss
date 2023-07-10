@@ -1,52 +1,5 @@
 @import '../../common.scss';
 
-.select_country {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 40px;
-    background: $color_grey;
-    color: $color_white;
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 0.8em;
-
-    .select_wrapper {
-        position: relative;
-        width: 300px;
-        height: 26px;
-        padding: 2px 4px;
-        border: 1px solid #bcbcbc;
-        border-radius: 0;
-        background: $color_white;
-        color: $color_dark_grey;
-
-        > select {
-            z-index: 1;
-            width: 100%;
-            height: auto;
-            border: 0;
-            background: $color_white;
-            color: #001d1f;
-            font-weight: 600;
-
-            &:focus-visible {
-                padding: 0 10px;
-                outline: $color_blue auto 1px;
-            }
-
-            option {
-                color: #001d1f;
-                font-weight: 500;
-            }
-        }
-
-        > select::-ms-expand {
-            display: none;
-        }
-    }
-}
-
 .search_field {
     position: relative;
     position: relative;

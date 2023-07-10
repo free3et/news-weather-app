@@ -1,18 +1,25 @@
 'use client'
-//import {useSelector} from 'react-redux'
 import { NewsNavigation } from './components/NewsComponent/NewsNavigation';
-import {useSearchParam} from './context/hooks/useSearchParam'
-import stylesLayout from "./Layout.module.scss";
-import './common.scss';
-import { SelectCountry } from './components/NewsComponent/SelectCountry';
 import { SearchNews } from './components/NewsComponent/SearchNews';
 import { NewsList } from './components/NewsComponent/NewsList';
 import { NewsListSearch } from './components/NewsComponent/NewsListSearch';
 import { TopNews } from './components/NewsComponent/TopNews';
+import stylesLayout from "./Layout.module.scss";
+import './common.scss';
+import { useState } from 'react';
 
 export default function Home() {
-//const userName = useSelector((state) => state.authReducer.value.userName)
-const [country, category, search, getCategory, getCountry, getSearchNews] = useSearchParam();
+const [category, setCategory] = useState("technology");
+const [search, setSearchNews] = useState("");
+
+  function getCategory(item: string) {
+    setCategory(item);
+    setSearchNews("");
+  }
+
+  function getSearchNews(item: string) {
+    setSearchNews(item);
+  }
   return (
       <div>
          <main>
@@ -24,7 +31,6 @@ const [country, category, search, getCategory, getCountry, getSearchNews] = useS
         </div>
         <div className="row">
           <div className={`${stylesLayout.news_top_navigation} col-lg-12`}>
-            <SelectCountry getCountry={getCountry} />
             <SearchNews getSearchNews={getSearchNews} />
           </div>
         </div>
@@ -34,15 +40,15 @@ const [country, category, search, getCategory, getCountry, getSearchNews] = useS
               {search === "" && (
                 <>
                   <h2>Top news</h2>
-                  <TopNews country={country} search={search}/>
+                  <TopNews search={search}/>
                 </>
               )}
 
               {search === "" && (
                 <>
-                  <a name={category}></a>
+                  <a id={category} ></a>
                   <h2>{category}</h2>
-                  <NewsList category={category} country={country} search={search}/>
+                  <NewsList category={category} search={search}/>
                 </>
               )}
               {search !== "" && (

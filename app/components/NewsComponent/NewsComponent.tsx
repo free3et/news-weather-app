@@ -4,8 +4,9 @@ import SourseNews from "../../assets/news/earth_internet_browser.png";
 import Calendar from "../../assets/news/calendar_date.png";
 import DefaultImg from "../../assets/news/default_image.jpg";
 import Image from "next/image";
+import { Post } from "./types";
 
-export const NewsComponent = ({ post, className }) => {
+export const NewsComponent = ({ post, className }: {post: Post, className: string}) => {
   const { title, abstract, published_date, pub_date, byline, source, web_url, snippet, media } = post;
   const externaImageLoader = ( urlToImage: string ) : string =>
   `${urlToImage}`;
@@ -20,7 +21,7 @@ export const NewsComponent = ({ post, className }) => {
         <div className={styles.userInfo_wrapper}>
           <div className={`${styles.userName_info}`}>
             <Image src={UserAvatar} alt={title} width='100' height='100'/>
-             <p>{typeof byline === 'string' ? byline : typeof byline === 'object' ? byline?.original : "no author"}</p>
+             <p>{typeof byline === 'string' ? byline /* : typeof byline === 'object' ? byline?.original */ : "no author"}</p>
 
           </div>
           <div className={`${styles.sourceNews_info}`}>
