@@ -1,0 +1,83 @@
+@import './common.scss';
+
+.content_wrapper {
+  display: flex;
+
+  h2 {
+    display: block;
+    margin: 0;
+    padding: 6px;
+    background: $color_main;
+    color: $color_white;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.8em;
+  }
+}
+
+.news_top_navigation {
+  display: flex;
+  height: 40px;
+}
+
+.news_wrapper {
+  margin-top: 30px;
+  padding-right: 10px;
+
+  article {
+    margin: 20px 0;
+    padding: 0 20px 0 0;
+
+    &:last-child {
+      padding: 0;
+    }
+  }
+}
+
+.weather_currency_wrapper {
+  margin-top: 30px;
+  padding-left: 10px;
+}
+
+@media (max-width: 991px) {
+  .content_wrapper {
+    display: flex;
+    flex-wrap: wrap-reverse;
+  }
+
+  .news_wrapper,
+  .weather_currency_wrapper {
+    margin-top: 20px;
+    padding: 0;
+  }
+
+  .news_top_navigation {
+    flex-direction: column;
+  }
+
+  .weather_currency_wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 4rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .news_top_navigation {
+    flex-direction: column;
+  }
+
+  .news_wrapper,
+  .weather_currency_wrapper {
+    margin-top: 80px;
+  }
+
+  .news_wrapper {
+    article {
+      padding: 0;
+    }
+  }
+  .weather_currency_wrapper{
+    flex-direction: column;
+  }
+}
