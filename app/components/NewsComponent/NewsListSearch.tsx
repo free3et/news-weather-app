@@ -7,6 +7,8 @@ import { NewsComponent } from "./NewsComponent";
 
 export const NewsListSearch = ({search}) => {
   const { data = [], isLoading, isError, isSuccess, error } = useGetSearchPostsQuery(search);
+  console.log(data);
+
 
   // Pagination
   const {
@@ -20,7 +22,7 @@ export const NewsListSearch = ({search}) => {
     totalPages,
   } = usePagination({
     contentPerPage: 6,
-    count: data.articles !== undefined ? data.articles.length : null,
+    count: data.response?.docs !== undefined ? data.response?.docs.length : null,
   });
 
   return (
@@ -60,10 +62,10 @@ export const NewsListSearch = ({search}) => {
         ) : null}
       </div>
       <div className="row">
-        <section className={styles.search}>
-          {data.articles !== undefined &&
+    <section className={styles.search}>
+          {data.response?.docs !== undefined &&
             isSuccess &&
-            data.articles
+            data.response?.docs
               .slice(firstContentIndex, lastContentIndex)
               .map((post, index) => (
                 <NewsComponent post={post} key={index} className={`col-12 col-md-6 col-lg-4`} />

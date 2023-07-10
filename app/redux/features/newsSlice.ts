@@ -21,22 +21,43 @@ const initialState = {
   } as AuthState
 } as InitialState */
 
-export const newsSlice = createApi({
+/* export const newsSlice = createApi({
   reducerPath: "newsApi",
   baseQuery: fetchBaseQuery({ baseUrl: "https://newsapi.org/v2/" }),
   endpoints: (builder) => ({
     getAllPosts: builder.query({
       query: (news) =>
         `top-headlines?country=${news.country}&category=${news.category}&apiKey=6517c7f12e7140328cc1277ec3ed050a`,
-      /* method: "GET", */
+
     }),
     getSearchPosts: builder.query({
       query: (search) => `everything?q=${search}&apiKey=6517c7f12e7140328cc1277ec3ed050a`,
-      /* method: "GET", */
+
     }),
     getTopPosts: builder.query({
       query: (country) =>
         `top-headlines?country=${country}&pageSize=2&apiKey=6517c7f12e7140328cc1277ec3ed050a`,
+
+    }),
+  }),
+}) */
+
+export const newsSlice = createApi({
+  reducerPath: "newsApi",
+  baseQuery: fetchBaseQuery({ baseUrl: "https://api.nytimes.com/svc" }),
+  endpoints: (builder) => ({
+    getAllPosts: builder.query({
+      query: (news) =>
+        `/search/v2/articlesearch.json?fq=section_name:(${news.category})&api-key=DVV1k6cbuMOY1vyGzMOPjSoq19doU2uT`,
+      /* method: "GET", */
+    }),
+    getSearchPosts: builder.query({
+      query: (search) => `/search/v2/articlesearch.json?q=${search}&api-key=DVV1k6cbuMOY1vyGzMOPjSoq19doU2uT`,
+      /* method: "GET", */
+    }),
+    getTopPosts: builder.query({
+      query: (country) =>
+        `/mostpopular/v2/viewed/1.json?api-key=DVV1k6cbuMOY1vyGzMOPjSoq19doU2uT`,
       /* method: "GET", */
     }),
   }),

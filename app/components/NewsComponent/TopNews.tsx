@@ -13,9 +13,9 @@ export const TopNews = ({country, search}) => {
         <>
           <div className="row">
             <section className={`${styles.top} `}>
-              {data.articles !== undefined &&
+              {data.results !== undefined &&
                 isSuccess &&
-                data.articles.map((post, index) => (
+                data.results.map((post, index) => (
                   <NewsComponent post={post} key={index} className={`col-12 col-md-6 col-lg-6`} />
                 ))}
             </section>

@@ -3,8 +3,8 @@ import styles from "./News.module.scss";
 
 const category: Category = {
   business: "business",
-  entertainment: "entertainment",
-  general: "general",
+  education: "education",
+  world: "world",
   health: "health",
   science: "science",
   sports: "sports",

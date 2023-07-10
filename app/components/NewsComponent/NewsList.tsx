@@ -26,7 +26,7 @@ export const NewsList = ({category, country, search}) => {
     totalPages,
   } = usePagination({
     contentPerPage: 6,
-    count: data.articles !== undefined ? data.articles.length : null,
+    count: data.response?.docs !== undefined ? data.response?.docs.length : null,
   });
 
   return (
@@ -67,10 +67,10 @@ export const NewsList = ({category, country, search}) => {
       </div>
       <div className="row">
         <section className={styles.category}>
-          {data.articles !== undefined &&
+          {data.response?.docs !== undefined &&
             isSuccess &&
             search === "" &&
-            data.articles
+            data.response?.docs
               .slice(firstContentIndex, lastContentIndex)
               .map((post, index) => (
                 <NewsComponent
