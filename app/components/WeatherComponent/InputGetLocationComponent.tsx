@@ -1,10 +1,10 @@
 "use client";
 import React, { useState } from "react";
-import { WeatherComponentProps } from "../types";
+import { GetLocation } from "../types";
 import styles from "./Weather.module.scss";
 
 
-export const InputGetLocationComponent: React.FC<WeatherComponentProps> = ({getLocation}) => {
+export const InputGetLocationComponent: React.FC<GetLocation> = ({getLocation}) => {
   const [location] = useState<string>("kyiv");
 
   return (
