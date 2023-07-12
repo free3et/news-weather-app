@@ -11,8 +11,11 @@ export type Post = {
 }
 
 export interface WeatherComponentProps {
-  location?: string;
-  getLocation?: (location: string) => void
+  location: string;
+}
+
+export interface GetLocation {
+  getLocation: (location: string) => string
 }
 
 export interface Weather {
