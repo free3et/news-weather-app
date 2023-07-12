@@ -7,6 +7,7 @@ import { TopNews } from './components/NewsComponent/TopNews';
 import stylesLayout from "./Layout.module.scss";
 import './common.scss';
 import { useState } from 'react';
+import { WeatherComponentWrapper } from './components/WeatherComponent/WeatherComponentWrapper';
 
 export default function Home() {
 const [category, setCategory] = useState("technology");
@@ -34,9 +35,9 @@ const [search, setSearchNews] = useState("");
             <SearchNews getSearchNews={getSearchNews} />
           </div>
         </div>
-        <div className="row">
+        <div className="container">
           <div className={stylesLayout.content_wrapper}>
-            <div className={`${stylesLayout.news_wrapper} col-sm-12 col-lg-9`}>
+            <div className={`${stylesLayout.news_wrapper} col-sm-12 col-lg-8`}>
               {search === "" && (
                 <>
                   <h2>Top news</h2>
@@ -60,10 +61,10 @@ const [search, setSearchNews] = useState("");
             </div>
 
             <div
-              className={`${stylesLayout.weather_currency_wrapper} col-md-12 col-sm-12 col-lg-3 col-12`}
+              className={`${stylesLayout.weather_currency_wrapper} col-md-12 col-sm-12 col-lg-4 col-12`}
             >
-              {/* <WeatherPage />
-              <Currency /> */}
+              <WeatherComponentWrapper />
+              {/* <Currency /> */}
             </div>
           </div>
         </div>

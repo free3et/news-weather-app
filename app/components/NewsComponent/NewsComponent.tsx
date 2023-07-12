@@ -4,7 +4,7 @@ import SourseNews from "../../assets/news/earth_internet_browser.png";
 import Calendar from "../../assets/news/calendar_date.png";
 import DefaultImg from "../../assets/news/default_image.jpg";
 import Image from "next/image";
-import { Post } from "./types";
+import { Post } from "../types";
 
 export const NewsComponent = ({ post, className }: {post: Post, className: string}) => {
   const { title, abstract, published_date, pub_date, byline, source, web_url, snippet, media } = post;

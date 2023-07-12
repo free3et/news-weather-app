@@ -10,7 +10,7 @@ export const SearchNews = ({ getSearchNews }: GetSearchNews) => {
   const [value, setValue] = useState("");
 
   return (
-    <div className={`${styles.search_field} col-12 col-md-12 col-lg-6`}>
+    <div className={`${styles.search_field} col-12 col-md-12`}>
       <input
         type="text"
         id="search-input"
