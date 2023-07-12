@@ -39,3 +39,25 @@ export interface Forecast {
   main: { feels_like: number, humidity: number, pressure: number },
   wind: {speed: number},
 }
+
+export interface UsePaginationProps {
+  contentPerPage: number,
+  count: number,
+}
+
+export interface Gaps {
+  before: boolean,
+  paginationGroup: number[],
+  after: boolean
+}
+
+export interface UsePaginationReturn {
+  page: number;
+  totalPages: number;
+  firstContentIndex?: number;
+  lastContentIndex?: number;
+  nextPage: () => void;
+  prevPage: () => void;
+  setPage: (page: number) => void;
+  gaps: Gaps,
+}

@@ -1,27 +1,6 @@
 'use client'
 import { useState, useEffect } from "react";
-
-interface UsePaginationProps {
-  contentPerPage: number,
-  count: number,
-}
-
-interface Gaps {
-  before: boolean,
-  paginationGroup: number[],
-  after: boolean
-}
-
-interface UsePaginationReturn {
-  page: number;
-  totalPages: number;
-  firstContentIndex: number;
-  lastContentIndex: number;
-  nextPage: () => void;
-  prevPage: () => void;
-  setPage: (page: number) => void;
-  gaps: Gaps,
-}
+import {UsePaginationProps, UsePaginationReturn, Gaps} from '../types';
 
 export const usePagination  = ({ contentPerPage, count }: UsePaginationProps): UsePaginationReturn => {
   const [page, setPage] = useState(1);

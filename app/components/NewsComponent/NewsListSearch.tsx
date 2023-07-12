@@ -5,6 +5,7 @@ import { usePagination } from "../Pagination/usePagination";
 import "../Pagination/Pagination.css";
 import { NewsComponent } from "./NewsComponent";
 import { Post } from "../types";
+import { PaginationNav } from "../Pagination/PaginationNav";
 
 export const NewsListSearch = ({search}: {search: string}) => {
   const { data = [], isLoading, isError, isSuccess, error } = useGetSearchPostsQuery(search);
@@ -20,8 +21,8 @@ export const NewsListSearch = ({search}: {search: string}) => {
     setPage,
     totalPages,
   } = usePagination({
-    contentPerPage: 6,
-    count: data.response?.docs !== undefined ? data.response?.docs.length : null,
+    contentPerPage: 4,
+    count: data?.response?.docs !== undefined ? data?.response?.docs.length : null,
   });
 
   return (
@@ -29,42 +30,14 @@ export const NewsListSearch = ({search}: {search: string}) => {
       {isLoading && <Loader />}
       <div className="pagination">
         {totalPages > 0 && search !== "" ? (
-          <div className="pagination_nav">
-            <button onClick={prevPage} className={`page ${page === 1}`}>
-              &larr;
-            </button>
-            <button onClick={() => setPage(1)} className={`page ${page === 1}`}>
-              1
-            </button>
-            {gaps.before ? "..." : null}
-
-            {gaps.paginationGroup.map((el) => (
-              <button
-                onClick={() => setPage(el)}
-                key={el}
-                className={`page ${page === el ? "active" : ""}`}
-              >
-                {el}
-              </button>
-            ))}
-            {gaps.after ? "..." : null}
-            <button
-              onClick={() => setPage(totalPages)}
-              className={`page ${page === totalPages && "disabled"}`}
-            >
-              {totalPages}
-            </button>
-            <button onClick={nextPage} className={`page ${page === totalPages && "disabled"}`}>
-              &rarr;
-            </button>
-          </div>
+          <PaginationNav prevPage={prevPage} page={page} setPage={setPage} gaps={gaps} totalPages={totalPages} nextPage={nextPage}/>
         ) : null}
       </div>
       <div className="row">
     <section className={styles.search}>
-          {data.response?.docs !== undefined &&
+          {data?.response?.docs !== undefined &&
             isSuccess &&
-            data.response?.docs
+            data?.response?.docs
               .slice(firstContentIndex, lastContentIndex)
               .map((post: Post, index: number) => (
                 <NewsComponent post={post} key={index} className={`col-12`} />

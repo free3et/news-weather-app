@@ -32,7 +32,7 @@ export const ForecastComponent: React.FC<WeatherComponentProps> = ({location}) =
                return (
                 <div key={index} className={styles.location__bottom}>
                   <div className={styles.location__bottom_date}>
-                    <img src={`${imgUrl}/${item?.weather[0]?.icon}.png`} />
+                    <img src={`${imgUrl}/${item?.weather[0]?.icon}.png`} alt='weather'/>
                     <p>{unixToDate(item?.dt)}</p>
                   </div>
                   <p className={styles.temp}>{item?.main?.feels_like.toFixed()}°C</p>

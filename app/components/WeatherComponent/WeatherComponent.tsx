@@ -13,7 +13,6 @@ export const WeatherComponent: React.FC<WeatherComponentProps> = ({ location }) 
     isSuccess,
     error,
   } = useGetWeatherQuery(location);
-  console.log(data);
 
 /* const {name, weather: [weatherData], dt, main: { temp, feels_like, humidity, pressure }, wind: { speed }} = data as Weather; */
 
