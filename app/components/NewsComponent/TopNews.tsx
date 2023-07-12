@@ -2,7 +2,7 @@ import { useGetTopPostsQuery } from "@/app/redux/features/newsSlice";
 import { NewsComponent } from "./NewsComponent";
 import styles from "./News.module.scss";
 import { Loader } from "../Loader/Loader";
-import { Post } from "./types";
+import { Post } from "../types";
 
 export const TopNews = ({search}: { search: string}) => {
   const { data = [], isLoading, isError, isSuccess, error } = useGetTopPostsQuery(search);

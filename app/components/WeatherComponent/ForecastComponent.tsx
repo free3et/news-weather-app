@@ -2,28 +2,19 @@ import styles from "./Weather.module.scss";
 import {
   useGetForecastQuery,
 } from "@/app/redux/features/weatherSlice";
-
-interface WeatherComponentProps {
-  location: string;
-}
-
-interface Forecast {
-  weather: [{
-    icon: string,
-  }],
-  dt: number,
-  main: { feels_like: number, humidity: number, pressure: number },
-  wind: {speed: number},
-}
+import { Forecast, WeatherComponentProps } from "../types";
+import { Loader } from "../Loader/Loader";
 
 export const ForecastComponent: React.FC<WeatherComponentProps> = ({location}) => {
   const {
     data = [],
     isLoading,
     isError,
+    isSuccess,
+    error,
   } = useGetForecastQuery(location);
 
-  console.log(data);
+/*   const {weather: [weatherData], dt, main: { feels_like, humidity, pressure }, wind: { speed }} = data as Forecast; */
 
   const imgUrl = "https://openweathermap.org/img/wn";
 
@@ -32,29 +23,28 @@ export const ForecastComponent: React.FC<WeatherComponentProps> = ({location}) =
   };
 
   return (
-    <div className={styles.location__wrapper}>
+    <>
+    {isLoading && <Loader/> }
+    {data ? (
+        <div className={styles.location__wrapper}>
           <div className={styles.location}>
             {data?.list?.map((item: Forecast, index: number) => {
-              const {
-                weather: [weatherData],
-                dt,
-                main: { feels_like, humidity, pressure } = {},
-                wind,
-              } = item;
-              return (
+               return (
                 <div key={index} className={styles.location__bottom}>
                   <div className={styles.location__bottom_date}>
-                    <img src={`${imgUrl}/${weatherData.icon}.png`} />
-                    <p>{unixToDate(dt)}</p>
+                    <img src={`${imgUrl}/${item?.weather[0]?.icon}.png`} />
+                    <p>{unixToDate(item?.dt)}</p>
                   </div>
-                  <p className={styles.temp}>{feels_like?.toFixed()}°C</p>
-                  <p className={styles.humidity}>{humidity}%</p>
-                  <p className={styles.speed}>{wind?.speed.toFixed()} м/с</p>
-                  <p className={styles.pressure}>{pressure}</p>
+                  <p className={styles.temp}>{item?.main?.feels_like.toFixed()}°C</p>
+                  <p className={styles.humidity}>{item?.main?.humidity}%</p>
+                  <p className={styles.speed}>{item?.wind?.speed.toFixed()} м/с</p>
+                  <p className={styles.pressure}>{item?.main?.pressure}</p>
                 </div>
               );
             })}
           </div>
         </div>
+    ) : null}
+    </>
   )
 }

@@ -4,7 +4,7 @@ import styles from "./News.module.scss";
 import { Loader } from "../Loader/Loader";
 import { usePagination } from "../Pagination/usePagination";
 import "../Pagination/Pagination.css";
-import { Post } from "./types";
+import { Post } from "../types";
 
 export const NewsList = ({category, search}: {category: string, search: string}) => {
 

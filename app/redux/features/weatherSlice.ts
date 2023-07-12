@@ -1,4 +1,3 @@
-import {PayloadAction} from '@reduxjs/toolkit'
 import {fetchBaseQuery, createApi} from '@reduxjs/toolkit/query/react'
 
 export const weatherSlice = createApi({

@@ -8,6 +8,7 @@
     padding: 0.5em 1.5em;
     border-left: 1px solid rgba(155, 154, 151, 0.4);
     background: $color_grey;
+    width: 100%;
 
     &:after {
         content: '';
@@ -98,6 +99,7 @@
 }
 
 .newsCard_wrap {
+
     .newsCard_thumb_img {
         position: relative;
         width: 100%;
