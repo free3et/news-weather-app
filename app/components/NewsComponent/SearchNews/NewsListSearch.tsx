@@ -1,11 +1,11 @@
 import { useGetSearchPostsQuery } from "@/app/redux/features/newsSlice";
-import styles from "./News.module.scss";
-import { Loader } from "../Loader/Loader";
-import { usePagination } from "../Pagination/usePagination";
-import "../Pagination/Pagination.css";
-import { NewsComponent } from "./NewsComponent";
-import { Post } from "../types";
-import { PaginationNav } from "../Pagination/PaginationNav";
+import styles from "../News.module.scss";
+import { Loader } from "../../Loader/Loader";
+import { usePagination } from "../../Pagination/usePagination";
+import "../../Pagination/Pagination.css";
+import { NewsByCategoryComponent } from "../NewsByCategory/NewsByCategoryComponent";
+import { NewsWithoutImage } from "../../types";
+import { PaginationNav } from "../../Pagination/PaginationNav";
 
 export const NewsListSearch = ({search}: {search: string}) => {
   const { data = [], isLoading, isError, isSuccess, error } = useGetSearchPostsQuery(search);
@@ -39,8 +39,8 @@ export const NewsListSearch = ({search}: {search: string}) => {
             isSuccess &&
             data?.response?.docs
               .slice(firstContentIndex, lastContentIndex)
-              .map((post: Post, index: number) => (
-                <NewsComponent post={post} key={index} className={`col-12`} />
+              .map((post: NewsWithoutImage, index: number) => (
+                <NewsByCategoryComponent post={post} key={index} className={`col-12`} />
               ))}
         </section>
       </div>

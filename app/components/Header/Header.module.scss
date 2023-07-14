@@ -1,0 +1,75 @@
+@import "../../common.scss";
+.header {
+  display: flex;
+  height: 5rem;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $color_white;
+  color: $color_black;
+  position: sticky;
+  top: 0;
+  z-index: 3;
+
+  .logo_portal {
+    display: flex;
+    align-items: flex-end;
+    font-size: 20px;
+    font-weight: 700;
+    padding-left: 0.4rem;
+  }
+  .logo {
+    display: flex;
+    list-style: none;
+    margin: 0 0.5rem 0 0;
+  }
+
+  .logo_letter {
+    background-color: $color_grey;
+    width: 2rem;
+    font-size: 25px;
+    font-weight: 700;
+    margin-left: 0.5rem;
+  }
+  .date {
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+
+    li img {
+      width: 2rem;
+    height: auto;
+      margin: 1rem 0.8rem 0 0;
+    }
+  }
+
+  .social_network {
+    display: block;
+  }
+
+}
+
+@media (max-width: 991px) {
+  .header {
+    justify-content: space-between;
+
+    .logo_portal {
+      font-size: 15px;
+    }
+    .logo_letter {
+      font-size: 20px;
+    }
+    .date {
+      font-size: 15px;
+      padding-right: 2rem;
+    }
+    .social_network {
+      display: none;
+    }
+  }
+
+}

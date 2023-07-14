@@ -1,0 +1,95 @@
+@import '../../common.scss';
+
+.footer {
+  background-color: $color_grey;
+  margin-top: 30px;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 10px 20px;
+  }
+
+  &__contact {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+  }
+
+  &__location {
+    p {
+      text-align: center;
+    }
+    iframe {
+      width: 500px;
+      height: 170px;
+      object-fit: cover;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: center;
+
+    background-color: $color_dark_grey;
+
+    p {
+      color: $color_white;
+    }
+  }
+
+  p {
+    margin: 10px;
+    font-weight: bold;
+  }
+
+  a {
+    color: $color_white;
+  }
+}
+
+@media (max-width: 864px) {
+  .footer {
+    &__location {
+      iframe {
+        width: 360px;
+      }
+    }
+  }
+}
+
+@media (max-width: 720px) {
+  .footer {
+    margin-top: 15px;
+
+    &__container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__contact {
+      margin-top: 20px;
+    }
+
+    &__location {
+      margin-right: 40px;
+
+      p {
+        font-size: 14px;
+      }
+
+      iframe {
+        width: 310px;
+      }
+    }
+
+    &__bottom {
+      p {
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+

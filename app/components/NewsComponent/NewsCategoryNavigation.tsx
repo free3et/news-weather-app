@@ -18,7 +18,7 @@ type GetCategory = {
   getCategory: (item: string) => void
 }
 
-export const NewsNavigation = ({ getCategory }: GetCategory) => {
+export const NewsCategoryNavigation = ({ getCategory }: GetCategory) => {
   return (
     <div className={`${styles.news_navigation} col-lg-12`}>
       {Object.values(category).map((item, index) => (

@@ -1,13 +1,25 @@
-export type Post = {
+export type NewsWithoutImage = {
+  abstract: string,
+  pub_date: string,
+  byline: {original: string},
+  source: string,
+  web_url: string,
+  headline: {main: string},
+  section_name: string,
+  subsection_name: string,
+}
+
+export type TopNews = {
   title: string,
   abstract: string,
   published_date: string,
-  pub_date: string,
-  byline: object | string,
-  source: string,
-  web_url: string,
-  snippet: string,
-  media: object,
+  byline: string,
+  url: string,
+  media: [
+    { 'media-metadata': [
+      { url?: string }
+    ] }
+  ]
 }
 
 export interface WeatherComponentProps {

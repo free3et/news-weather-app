@@ -1,12 +1,12 @@
 'use client'
 import { useState } from "react";
-import styles from "./News.module.scss";
+import styles from "../News.module.scss";
 
 type GetSearchNews = {
   getSearchNews: (item: string) => void
 }
 
-export const SearchNews = ({ getSearchNews }: GetSearchNews) => {
+export const InputSearchNews = ({ getSearchNews }: GetSearchNews) => {
   const [value, setValue] = useState("");
 
   return (
