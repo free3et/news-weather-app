@@ -7,7 +7,8 @@ import twitter from "../../assets/header/twitter.png";
 import styles from "./Header.module.scss";
 
 export const Header = () => {
-  const date = new Intl.DateTimeFormat("ua", {
+  const date = new Intl.DateTimeFormat("en-US", {
+    weekday: "long",
     year: "numeric",
     month: "long",
     day: "numeric",
@@ -16,7 +17,7 @@ export const Header = () => {
   return (
     <header className={styles.header}>
       <div className="container">
-      <div className={`${styles.logo_portal} col-lg-3`} >
+      <div className={`${styles.logo_portal} col-lg-4`} >
         <ul className={styles.logo}>
           <li className={styles.logo_letter}>A</li>
           <li className={styles.logo_letter}>B</li>
@@ -24,7 +25,7 @@ export const Header = () => {
         </ul>
         <span>NEWS</span>
       </div>
-      <div className={`${styles.date} col-lg-3`}>{date}</div>
+      <div className={`${styles.date} col-lg-4`}>{date}</div>
       <div className={`${styles.social_network} col-lg-3`}>
         <ul>
           <li>

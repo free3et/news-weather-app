@@ -1,7 +1,7 @@
 import styles from "./News.module.scss";
 
 const category: Categories = {
-  business: "business",
+  business: "Business Day",
   education: "education",
   world: "world",
   health: "health",

@@ -1,10 +1,11 @@
 @import "../../common.scss";
 .header {
   display: flex;
-  height: 5rem;
+  height: 4rem;
   align-items: center;
   justify-content: space-between;
   background-color: $color_white;
+  box-shadow: 0 2px 4px rgba(0,0,0,.08), 0 4px 12px rgba(0,0,0,.08);
   color: $color_black;
   position: sticky;
   top: 0;
@@ -29,6 +30,8 @@
     font-size: 25px;
     font-weight: 700;
     margin-left: 0.5rem;
+    display: flex;
+    justify-content: center;
   }
   .date {
     font-size: 20px;
@@ -37,13 +40,15 @@
 
   ul {
     display: flex;
+    justify-content: flex-end;
     list-style: none;
     padding: 0;
+    margin: 0;
 
     li img {
       width: 2rem;
     height: auto;
-      margin: 1rem 0.8rem 0 0;
+      margin: 0 0.8rem 0 0;
     }
   }
 

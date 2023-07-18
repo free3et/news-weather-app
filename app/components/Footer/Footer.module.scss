@@ -14,7 +14,6 @@
   &__contact {
     display: flex;
     flex-direction: column;
-    margin-top: 40px;
   }
 
   &__location {
@@ -40,12 +39,14 @@
   }
 
   p {
-    margin: 10px;
     font-weight: bold;
   }
 
   a {
     color: $color_white;
+    margin: 10px 0;
+    text-decoration: none;
+    font-weight: 700;
   }
 }
 

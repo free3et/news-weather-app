@@ -14,8 +14,6 @@ export const WeatherComponent: React.FC<WeatherComponentProps> = ({ location }) 
     error,
   } = useGetWeatherQuery(location);
 
-/* const {name, weather: [weatherData], dt, main: { temp, feels_like, humidity, pressure }, wind: { speed }} = data as Weather; */
-
   return (
     <>
     {isLoading && <Loader/> }

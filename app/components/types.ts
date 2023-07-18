@@ -17,7 +17,7 @@ export type TopNews = {
   url: string,
   media: [
     { 'media-metadata': [
-      { url?: string }
+      { url: string }
     ] }
   ]
 }
@@ -72,4 +72,18 @@ export interface UsePaginationReturn {
   prevPage: () => void;
   setPage: (page: number) => void;
   gaps: Gaps,
+}
+
+export interface Currency {
+    cc: string,
+    rate: number,
+    r030: number
+}
+
+export interface CurrencyElement {
+  curency: {
+    cc: string,
+    rate: number,
+    r030: number
+  }
 }

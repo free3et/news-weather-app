@@ -5,6 +5,12 @@ import DefaultImg from "../../../assets/news/default_image.jpg";
 import Image from "next/image";
 import { TopNews } from "../../types";
 
+interface Value {
+  value: {
+    url: string
+  }
+}
+
 export const TopNewsComponent = ({ post, className }: {post: TopNews, className: string}) => {
   const { title, abstract, published_date, byline, url, media} = post;
 

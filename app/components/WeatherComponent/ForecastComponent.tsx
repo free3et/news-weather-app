@@ -3,7 +3,6 @@ import {
   useGetForecastQuery,
 } from "@/app/redux/features/weatherSlice";
 import { Forecast, WeatherComponentProps } from "../types";
-import { Loader } from "../Loader/Loader";
 
 export const ForecastComponent: React.FC<WeatherComponentProps> = ({location}) => {
   const {
@@ -14,8 +13,6 @@ export const ForecastComponent: React.FC<WeatherComponentProps> = ({location}) =
     error,
   } = useGetForecastQuery(location);
 
-/*   const {weather: [weatherData], dt, main: { feels_like, humidity, pressure }, wind: { speed }} = data as Forecast; */
-
   const imgUrl = "https://openweathermap.org/img/wn";
 
   const unixToDate = (unixDate: number) => {
@@ -24,7 +21,6 @@ export const ForecastComponent: React.FC<WeatherComponentProps> = ({location}) =
 
   return (
     <>
-    {isLoading && <Loader/> }
     {data ? (
         <div className={styles.location__wrapper}>
           <div className={styles.location}>

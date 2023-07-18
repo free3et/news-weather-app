@@ -10,6 +10,7 @@ import { useState } from 'react';
 import { WeatherComponentWrapper } from './components/WeatherComponent/WeatherComponentWrapper';
 import { Header } from './components/Header/Header';
 import { Footer } from './components/Footer/Footer';
+import { Currency, CurrencyComponent } from './components/CurrencyComponent/CurrencyComponent';
 
 export default function Home() {
 const [category, setCategory] = useState("technology");
@@ -66,7 +67,7 @@ const [search, setSearchNews] = useState("");
                 className={`${stylesLayout.weather_currency_wrapper} col-md-12 col-sm-12 col-lg-4 col-12`}
               >
                 <WeatherComponentWrapper />
-                {/* <Currency /> */}
+              <CurrencyComponent />
               </div>
             </div>
           </div>
