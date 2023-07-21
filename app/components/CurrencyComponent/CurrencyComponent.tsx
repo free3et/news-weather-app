@@ -21,9 +21,7 @@ const filterCurrency = (data: Currency[]) => {
 export const CurrencyComponent = () => {
   const { data = [],
     isLoading,
-    isError,
-    isSuccess,
-    error } = useGetCurrencyQuery('');
+    isError} = useGetCurrencyQuery('');
 
   return (
     <>
