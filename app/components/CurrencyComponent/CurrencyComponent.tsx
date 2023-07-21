@@ -29,6 +29,10 @@ export const CurrencyComponent = () => {
 
     <div className={`${style.currency} col-lg-12 col-sm-7 col-md-5 mx-auto col-10`}>
       <h3 className={style.title}>Exchange rate</h3>
+      <div className={style.row}>
+          <h4>Currency</h4>
+          <h4>UAH</h4>
+      </div>
       {isLoading && <Loader/> }
         {data && (
           filterCurrency(data)?.map((element: Currency, i) => <InputGetCurrency curency={element} key={i} />)

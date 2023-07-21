@@ -15,7 +15,7 @@ export const WeatherComponentWrapper = () => {
   return (
     <div
       className={`${styles.weather} `}>
-      <InputGetLocationComponent getLocation={getLocation} />
+      <InputGetLocationComponent getLocation={getLocation} location={location} />
       <WeatherComponent location={location}/>
       <ForecastComponent location={location}/>
      </div>

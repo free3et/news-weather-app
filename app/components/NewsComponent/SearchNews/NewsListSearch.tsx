@@ -25,6 +25,7 @@ export const NewsListSearch = ({search}: {search: string}) => {
     count: data?.response?.docs !== undefined ? data?.response?.docs.length : null,
   });
 
+
   return (
     <>
       {isLoading && <Loader />}
@@ -43,6 +44,11 @@ export const NewsListSearch = ({search}: {search: string}) => {
                 <NewsByCategoryComponent post={post} key={index} className={`col-12`} />
               ))}
         </section>
+        {!data?.response?.docs.length && (
+          <section className={styles.search}>
+            <h3>Sorry, but nothing was found there. Please try another search term</h3>
+          </section>
+        )}
       </div>
     </>
   );

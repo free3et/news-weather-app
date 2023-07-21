@@ -10,8 +10,9 @@
     color: $color_white;
     padding: 0.5rem;
     margin: 0;
-    font-size: 0.9em;
+    font-size: .8em;
     text-align: center;
+    text-transform: uppercase;
   }
 
   .row {
@@ -22,6 +23,10 @@
     padding: 1rem 0;
     overflow-x: hidden;
     justify-content: space-between;
+  }
+
+  h4 {
+    margin: 0;
   }
 
   .row_value {

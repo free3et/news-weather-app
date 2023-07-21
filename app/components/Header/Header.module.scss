@@ -4,7 +4,7 @@
   height: 4rem;
   align-items: center;
   justify-content: space-between;
-  background-color: $color_white;
+  background-color: $color_light_grey;
   box-shadow: 0 2px 4px rgba(0,0,0,.08), 0 4px 12px rgba(0,0,0,.08);
   color: $color_black;
   position: sticky;
@@ -34,8 +34,9 @@
     justify-content: center;
   }
   .date {
-    font-size: 20px;
+    font-size: 1.2rem;
     font-weight: 700;
+    line-height: 1.75;
   }
 
   ul {

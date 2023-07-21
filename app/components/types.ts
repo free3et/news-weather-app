@@ -27,7 +27,8 @@ export interface WeatherComponentProps {
 }
 
 export interface GetLocation {
-  getLocation: (location: string) => void
+  getLocation: (location: string) => void,
+  location: string
 }
 
 export interface Weather {

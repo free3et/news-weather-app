@@ -37,8 +37,7 @@ export const TopNewsList = ({search}: { search: string}) => {
         <>
           <div className="row">
             <section className={`${styles.top} `}>
-              {data?.results !== undefined &&
-            isSuccess &&
+              {data?.results &&
             data?.results.slice(firstContentIndex, lastContentIndex).map((post: TopNews, index: number) => (
                   <TopNewsComponent post={post} key={index} className={`col-12 col-md-6 col-lg-6`} />
                 ))}
