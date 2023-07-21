@@ -7,10 +7,7 @@ import { Forecast, WeatherComponentProps } from "../types";
 export const ForecastComponent: React.FC<WeatherComponentProps> = ({location}) => {
   const {
     data = [],
-    isLoading,
     isError,
-    isSuccess,
-    error,
   } = useGetForecastQuery(location);
 
   const imgUrl = "https://openweathermap.org/img/wn";
@@ -21,7 +18,8 @@ export const ForecastComponent: React.FC<WeatherComponentProps> = ({location}) =
 
   return (
     <>
-    {data ? (
+      {isError && (<div><h1>error</h1></div>)}
+     {data ? (
         <div className={styles.location__wrapper}>
           <div className={styles.location}>
             {data?.list?.map((item: Forecast, index: number) => {

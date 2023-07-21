@@ -1,7 +1,7 @@
 import styles from "./Weather.module.scss";
 import { useGetWeatherQuery } from "@/app/redux/features/weatherSlice";
 import { Loader } from "../Loader/Loader";
-import { Weather, WeatherComponentProps } from "../types";
+import { WeatherComponentProps } from "../types";
 
 export const WeatherComponent: React.FC<WeatherComponentProps> = ({ location }) => {
   const imgUrl = "https://openweathermap.org/img/wn";
@@ -10,13 +10,12 @@ export const WeatherComponent: React.FC<WeatherComponentProps> = ({ location }) 
     data = [],
     isLoading,
     isError,
-    isSuccess,
-    error,
   } = useGetWeatherQuery(location);
 
   return (
     <>
     {isLoading && <Loader/> }
+    {isError && (<div><h1>error</h1></div>)}
     {data ? (
       <div className={styles.container}>
             <div className={styles.location__top}>
@@ -24,7 +23,7 @@ export const WeatherComponent: React.FC<WeatherComponentProps> = ({ location }) 
               <p className={styles.location__header_title}>{data?.name}</p>
             </div>
             <>
-              <img
+              <img alt='forecast'
                 className={styles.location__img}
                 src={`${imgUrl}/${
                   data?.weather ? data?.weather[0].icon : "01d"

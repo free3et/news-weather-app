@@ -8,7 +8,7 @@ import { NewsWithoutImage } from "../../types";
 import { PaginationNav } from "../../Pagination/PaginationNav";
 
 export const NewsListCategory = ({category, search}: {category: string, search: string}) => {
-  const { data = [], isLoading, isError, isSuccess, error } = useGetAllPostsQuery(category);
+  const { data = [], isLoading, isError } = useGetAllPostsQuery(category);
 
   // Pagination
   const {
@@ -28,6 +28,7 @@ export const NewsListCategory = ({category, search}: {category: string, search: 
   return (
     <>
       {isLoading && <Loader />}
+      {isError && (<div><h1>error</h1></div>)}
       <div className="pagination">
         {totalPages > 0 && search === "" ? (
           <PaginationNav prevPage={prevPage} page={page} setPage={setPage} gaps={gaps} totalPages={totalPages} nextPage={nextPage}/>

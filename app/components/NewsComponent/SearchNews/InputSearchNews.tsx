@@ -1,5 +1,5 @@
 'use client'
-import { FormEventHandler, useState } from "react";
+import {useState } from "react";
 import styles from "../News.module.scss";
 
 type GetSearchNews = {

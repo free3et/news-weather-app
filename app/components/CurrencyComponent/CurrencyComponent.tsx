@@ -6,7 +6,7 @@ import { Currency } from "../types";
 
 const filterCurrency = (data: Currency[]) => {
 
- let result = data?.filter(
+ const result = data?.filter(
     (e) =>
       e.cc == "USD" ||
       e.cc == "EUR" ||

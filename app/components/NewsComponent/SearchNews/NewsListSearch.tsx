@@ -8,7 +8,7 @@ import { NewsWithoutImage } from "../../types";
 import { PaginationNav } from "../../Pagination/PaginationNav";
 
 export const NewsListSearch = ({search}: {search: string}) => {
-  const { data = [], isLoading, isError, isSuccess, error } = useGetSearchPostsQuery(search);
+  const { data = [], isLoading, isError, isSuccess } = useGetSearchPostsQuery(search);
 
   // Pagination
   const {
@@ -29,6 +29,7 @@ export const NewsListSearch = ({search}: {search: string}) => {
   return (
     <>
       {isLoading && <Loader />}
+      {isError && (<div><h1>error</h1></div>)}
       <div className="pagination">
         {totalPages > 0 && search !== "" ? (
           <PaginationNav prevPage={prevPage} page={page} setPage={setPage} gaps={gaps} totalPages={totalPages} nextPage={nextPage}/>
@@ -36,8 +37,7 @@ export const NewsListSearch = ({search}: {search: string}) => {
       </div>
       <div className="row">
     <section className={styles.search}>
-          {data?.response?.docs !== undefined &&
-            isSuccess &&
+          {data?.response?.docs &&
             data?.response?.docs
               .slice(firstContentIndex, lastContentIndex)
               .map((post: NewsWithoutImage, index: number) => (

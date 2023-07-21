@@ -1,4 +1,4 @@
-import { Gaps, UsePaginationReturn } from "../types";
+import { UsePaginationReturn } from "../types";
 
 export const PaginationNav = ({prevPage, page, setPage, gaps, totalPages, nextPage}: UsePaginationReturn) => {
   return (

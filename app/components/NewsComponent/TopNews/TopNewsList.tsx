@@ -9,7 +9,7 @@ import '../../Pagination/Pagination.css'
 
 
 export const TopNewsList = ({search}: { search: string}) => {
-  const { data = [], isLoading, isError, isSuccess, error } = useGetTopPostsQuery(search);
+  const { data = [], isLoading, isError } = useGetTopPostsQuery('');
   // Pagination
   const {
     firstContentIndex,
@@ -28,6 +28,7 @@ export const TopNewsList = ({search}: { search: string}) => {
   return (
     <>
       {isLoading && <Loader />}
+      {isError && (<div><h1>error</h1></div>)}
       <div className="pagination">
         {totalPages > 0 && search === "" ? (
           <PaginationNav prevPage={prevPage} page={page} setPage={setPage} gaps={gaps} totalPages={totalPages} nextPage={nextPage}/>
