@@ -5,30 +5,36 @@ import DefaultImg from "../../../assets/news/default_image.jpg";
 import Image from "next/image";
 import { TopNews } from "../../types";
 
-interface Value {
-  value: {
-    url: string
-  }
-}
-
 export const TopNewsComponent = ({ post, className }: {post: TopNews, className: string}) => {
   const { title, abstract, published_date, byline, url, media} = post;
 
   const urlToImg = media?.map(item => {
-    let res = Object.entries(item).map(([key, value]) => {
-      if(key === 'media-metadata'){
-        return value[2] ? value[2].url : null
-      }
+    let imgSrc = ''
+    const getMetadata = Object.entries(item).filter(([key, value]) => {
+        if(key === 'media-metadata'){
+          return value
+        }
       })
-      const data = res.filter(item => item !== undefined)
-      const [imageURL] = data;
-      return imageURL
+
+      getMetadata[0].map(item => {
+        if(Array.isArray(item)){
+          item.filter((el, index) => {
+            if(index === 2) imgSrc = el.url
+            return imgSrc
+          })
+        }
+      });
+
+      return imgSrc
     })
+
+    const [imgUrl] = urlToImg;
+
 
   return (
     <article className={`${styles.newsCard_wrap} ${className}`}>
-      <div className={styles.newsCard_thumb_img}>
-      <Image src={(post?.media?.length && urlToImg) ? urlToImg[0] : DefaultImg} alt={title} width='360' height='230'/>
+  <div className={styles.newsCard_thumb_img}>
+      <Image src={(post?.media?.length && imgUrl) ? imgUrl : DefaultImg} alt={title} width='360' height='230'/>
       </div>
        <div className={styles.newsCard_body}>
         <h3><a href={url}>{title}</a></h3>
