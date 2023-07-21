@@ -10,7 +10,7 @@ import { useState } from 'react';
 import { WeatherComponentWrapper } from './components/WeatherComponent/WeatherComponentWrapper';
 import { Header } from './components/Header/Header';
 import { Footer } from './components/Footer/Footer';
-import { Currency, CurrencyComponent } from './components/CurrencyComponent/CurrencyComponent';
+import { CurrencyComponent } from './components/CurrencyComponent/CurrencyComponent';
 
 export default function Home() {
 const [category, setCategory] = useState("technology");
