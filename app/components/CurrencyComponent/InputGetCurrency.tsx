@@ -1,9 +1,9 @@
 'use client'
 import { useState } from "react";
 import style from "./Currency.module.scss";
-import { CurrencyElement } from "../types";
+//import { CurrencyElement } from "../types";
 
-export const InputGetCurrency = ({ curency }: CurrencyElement) => {
+export const InputGetCurrency = ({ curency }: any) => {
   const [value, setValue] = useState(1)
   const { cc, rate } = curency
 

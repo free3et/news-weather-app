@@ -8,7 +8,7 @@ import { NewsWithoutImage } from "../../types";
 import { PaginationNav } from "../../Pagination/PaginationNav";
 
 export const NewsListSearch = ({search}: {search: string}) => {
-  const { data = [], isLoading, isError, isSuccess } = useGetSearchPostsQuery(search);
+  const { data = [], isLoading, isError } = useGetSearchPostsQuery(search);
 
   // Pagination
   const {
