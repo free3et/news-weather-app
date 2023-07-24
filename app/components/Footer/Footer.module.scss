@@ -65,23 +65,13 @@
     margin-top: 15px;
 
     &__container {
-      flex-direction: column;
       align-items: center;
     }
 
-    &__contact {
-      margin-top: 20px;
-    }
-
     &__location {
-      margin-right: 40px;
 
       p {
-        font-size: 14px;
-      }
-
-      iframe {
-        width: 310px;
+        font-size: 1rem;
       }
     }
 

@@ -26,7 +26,7 @@ export const CurrencyComponent = () => {
   return (
     <>
     {isError && (<div><h1>error</h1></div>)}
-    <div className={`${style.currency} col-lg-12 col-sm-7 col-md-5 mx-auto col-10`}>
+    <div className={`${style.currency}`}>
       <h3 className={style.title}>Exchange rate</h3>
       <div className={style.row}>
           <h4>Currency</h4>

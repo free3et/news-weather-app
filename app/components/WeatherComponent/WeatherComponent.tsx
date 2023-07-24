@@ -15,7 +15,7 @@ export const WeatherComponent: React.FC<WeatherComponentProps> = ({ location }) 
   return (
     <>
     {isLoading && <Loader/> }
-    {isError && (<div><h3>Please enter the correct city name</h3></div>)}
+    {isError && (<div><h4 className="error">Please enter the correct city name</h4></div>)}
     {!isError && data ? (
       <div className={styles.container}>
             <div className={styles.location__top}>

@@ -40,7 +40,7 @@ const [search, setSearchNews] = useState("");
           </div>
           <div className="container">
             <div className={stylesLayout.content_wrapper}>
-              <div className={`${stylesLayout.news_wrapper} col-sm-12 col-lg-8`}>
+              <div className={`${stylesLayout.news_wrapper} col-sm-12 col-md-8 col-lg-8`}>
                 {search === "" && (
                   <>
                     <h2>Top news</h2>
@@ -64,7 +64,7 @@ const [search, setSearchNews] = useState("");
               </div>
 
               <div
-                className={`${stylesLayout.weather_currency_wrapper} col-md-12 col-sm-12 col-lg-4 col-12`}
+                className={`${stylesLayout.weather_currency_wrapper} col-md-4 col-sm-12 col-lg-4 col-12`}
               >
                 <WeatherComponentWrapper />
               <CurrencyComponent />

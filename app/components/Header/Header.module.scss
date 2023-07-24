@@ -61,20 +61,52 @@
 
 @media (max-width: 991px) {
   .header {
-    justify-content: space-between;
+    height: 3rem;
 
     .logo_portal {
-      font-size: 15px;
+      font-size: 1rem;
     }
     .logo_letter {
-      font-size: 20px;
+      font-size: 1.1rem;
     }
     .date {
-      font-size: 15px;
-      padding-right: 2rem;
+      font-size: 1rem;
+      text-align: center;
     }
+
     .social_network {
-      display: none;
+      right: -7%;
+
+      ul li img {
+        width: 1.6rem;
+      }
+    }
+
+
+  }
+
+  @media (max-width: 720px) {
+    .header {
+      height: auto;
+
+      .container {
+        width: 100%;
+    }
+
+      .logo_portal {
+        font-size: .8rem;
+      }
+      .logo_letter {
+        font-size: 1rem;
+      }
+
+      .date {
+        font-size: .8rem;
+      }
+
+      .social_network {
+        right: -15%;
+      }
     }
   }
 

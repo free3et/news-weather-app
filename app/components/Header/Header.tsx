@@ -17,7 +17,7 @@ export const Header = () => {
   return (
     <header className={styles.header}>
       <div className="container">
-      <div className={`${styles.logo_portal} col-lg-4`} >
+      <div className={`${styles.logo_portal} col-xs-3 col-sm-4 col-md-4 col-lg-4`} >
         <ul className={styles.logo}>
           <li className={styles.logo_letter}>A</li>
           <li className={styles.logo_letter}>B</li>
@@ -25,8 +25,8 @@ export const Header = () => {
         </ul>
         <span>NEWS</span>
       </div>
-      <div className={`${styles.date} col-lg-4`}>{date}</div>
-      <div className={`${styles.social_network} col-lg-3`}>
+      <div className={`${styles.date} col-xs-3 col-sm-3 col-md-3 col-lg-4`}>{date}</div>
+      <div className={`${styles.social_network} col-xs-3 col-sm-3 col-md-3 col-lg-3`}>
         <ul>
           <li>
             <a href="#">

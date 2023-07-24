@@ -56,25 +56,17 @@
     padding: 0;
   }
 
-  .news_top_navigation {
-    flex-direction: column;
-  }
-
   .weather_currency_wrapper {
     display: flex;
     justify-content: space-evenly;
-    margin-top: 4rem;
+    margin-top: 1.5rem;
   }
 }
 
 @media (max-width: 767px) {
-  .news_top_navigation {
-    flex-direction: column;
-  }
-
   .news_wrapper,
   .weather_currency_wrapper {
-    margin-top: 80px;
+    margin-top: 2rem;
   }
 
   .news_wrapper {
@@ -82,7 +74,19 @@
       padding: 0;
     }
   }
-  .weather_currency_wrapper{
+
+}
+
+@media (max-width: 767px) {
+  .weather_currency_wrapper {
     flex-direction: column;
   }
+
+}
+
+@media (max-width: 520px) {
+  .news_wrapper {
+    width: auto;
+  }
+
 }

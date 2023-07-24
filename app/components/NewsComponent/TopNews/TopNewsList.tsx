@@ -40,7 +40,7 @@ export const TopNewsList = ({search}: { search: string}) => {
             <section className={`${styles.top} `}>
               {data?.results &&
             data?.results.slice(firstContentIndex, lastContentIndex).map((post: TopNews, index: number) => (
-                  <TopNewsComponent post={post} key={index} className={`col-12 col-md-6 col-lg-6`} />
+                  <TopNewsComponent post={post} key={index} className={`col-12 col-xs-12 col-md-6 col-lg-6`} />
                 ))}
             </section>
           </div>

@@ -31,6 +31,7 @@
 
   &__img {
     margin-top: -35px;
+    margin-right: 10px;
   }
 
   &__top {
@@ -43,7 +44,8 @@
     color: $color_dark_grey;
 
     p {
-      margin: 3px;
+      margin: 3px 0;
+      font-size: 1.4rem;
     }
   }
 
@@ -82,6 +84,31 @@
       align-items: inherit;
     }
   }
+
+  @media (max-width: 1024px) {
+    &__bottom {
+      font-size: 0.9rem;
+
+      &_date {
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  @media (max-width: 991px) {
+    &__bottom {
+      font-size: 0.9rem;
+      max-height: 35px;
+
+      &_date {
+        font-size: 0.9rem;
+      }
+    }
+
+    &__top {
+      margin: 0 0 -20px -20px;
+    }
+  }
 }
 
 .container {
@@ -90,6 +117,8 @@
   flex-direction: column;
   margin: 10px auto;
 }
+
+
 
 @media (max-width: 576px) {
   .pressure,
