@@ -22,14 +22,12 @@ export const NewsListSearch = ({search}: {search: string}) => {
     totalPages,
   } = usePagination({
     contentPerPage: 4,
-    count: data?.response?.docs !== undefined ? data?.response?.docs.length : null,
+    count: data?.response?.docs.length,
   });
-
 
   return (
     <>
       {isLoading && <Loader />}
-      {isError && (<div><h1>error</h1></div>)}
       <div className="pagination">
         {totalPages > 0 && search !== "" ? (
           <PaginationNav prevPage={prevPage} page={page} setPage={setPage} gaps={gaps} totalPages={totalPages} nextPage={nextPage}/>
@@ -37,7 +35,7 @@ export const NewsListSearch = ({search}: {search: string}) => {
       </div>
       <div className="row">
     <section className={styles.search}>
-          {data?.response?.docs &&
+          {!isError && data?.response?.docs &&
             data?.response?.docs
               .slice(firstContentIndex, lastContentIndex)
               .map((post: NewsWithoutImage, index: number) => (

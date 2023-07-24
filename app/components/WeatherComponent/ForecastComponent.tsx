@@ -18,8 +18,7 @@ export const ForecastComponent: React.FC<WeatherComponentProps> = ({location}) =
 
   return (
     <>
-      {isError && (<div><h1>error</h1></div>)}
-     {data ? (
+      {!isError && data ? (
         <div className={styles.location__wrapper}>
           <div className={styles.location}>
             {data?.list?.map((item: Forecast, index: number) => {
