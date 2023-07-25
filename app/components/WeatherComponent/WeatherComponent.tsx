@@ -1,32 +1,35 @@
-import styles from "./Weather.module.scss";
-import { useGetWeatherQuery } from "@/app/redux/features/weatherSlice";
-import { Loader } from "../Loader/Loader";
-import { WeatherComponentProps } from "../types";
+import styles from './Weather.module.scss';
+import { useGetWeatherQuery } from '@/app/redux/features/weatherSlice';
+import { Loader } from '../Loader/Loader';
+import { WeatherComponentProps } from '../types';
 
-export const WeatherComponent: React.FC<WeatherComponentProps> = ({ location }) => {
-  const imgUrl = "https://openweathermap.org/img/wn";
+export const WeatherComponent: React.FC<WeatherComponentProps> = ({
+  location,
+}) => {
+  const imgUrl = 'https://openweathermap.org/img/wn';
 
-  const {
-    data = [],
-    isLoading,
-    isError,
-  } = useGetWeatherQuery(location);
+  const { data = [], isLoading, isError } = useGetWeatherQuery(location);
 
   return (
     <>
-    {isLoading && <Loader/> }
-    {isError && (<div><h4 className="error">Please enter the correct city name</h4></div>)}
-    {!isError && data ? (
-      <div className={styles.container}>
-            <div className={styles.location__top}>
+      {isLoading && <Loader />}
+      {isError && (
+        <div>
+          <h4 className='error'>Please enter the correct city name</h4>
+        </div>
+      )}
+      {!isError && data ? (
+        <div className={styles.container}>
+          <div className={styles.location__top}>
             <div className={styles.location__header}>
               <p className={styles.location__header_title}>{data?.name}</p>
             </div>
             <>
-              <img alt='forecast'
+              <img
+                alt='forecast'
                 className={styles.location__img}
                 src={`${imgUrl}/${
-                  data?.weather ? data?.weather[0].icon : "01d"
+                  data?.weather ? data?.weather[0].icon : '01d'
                 }@2x.png`}
               />
             </>
@@ -51,9 +54,8 @@ export const WeatherComponent: React.FC<WeatherComponentProps> = ({ location }) 
               {data?.main ? <p>{data?.main.pressure}</p> : null}
             </div>
           </div>
-      </div>
-
-    ) : null}
-  </>
+        </div>
+      ) : null}
+    </>
   );
 };

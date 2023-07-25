@@ -1,86 +1,83 @@
 @import '../../common.scss';
 
 .footer {
-  background-color: $color_grey;
-  margin-top: 30px;
-
-  &__container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    padding: 10px 20px;
-  }
-
-  &__contact {
-    display: flex;
-    flex-direction: column;
-  }
-
-  &__location {
-    p {
-      text-align: center;
-    }
-    iframe {
-      width: 500px;
-      height: 170px;
-      object-fit: cover;
-    }
-  }
-
-  &__bottom {
-    display: flex;
-    justify-content: center;
-
-    background-color: $color_dark_grey;
-
-    p {
-      color: $color_white;
-    }
-  }
-
-  p {
-    font-weight: bold;
-  }
-
-  a {
-    color: $color_white;
-    margin: 10px 0;
-    text-decoration: none;
-    font-weight: 700;
-  }
-}
-
-@media (max-width: 864px) {
-  .footer {
-    &__location {
-      iframe {
-        width: 360px;
-      }
-    }
-  }
-}
-
-@media (max-width: 720px) {
-  .footer {
-    margin-top: 15px;
+    margin-top: 30px;
+    background-color: $color_grey;
 
     &__container {
-      align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 10px 20px;
+    }
+
+    &__contact {
+        display: flex;
+        flex-direction: column;
     }
 
     &__location {
+        p {
+            text-align: center;
+        }
 
-      p {
-        font-size: 1rem;
-      }
+        iframe {
+            width: 500px;
+            height: 170px;
+            object-fit: cover;
+        }
     }
 
     &__bottom {
-      p {
-        font-size: 13px;
-      }
+        display: flex;
+        justify-content: center;
+        background-color: $color_dark_grey;
+
+        p {
+            color: $color_white;
+        }
     }
-  }
+
+    p {
+        font-weight: bold;
+    }
+
+    a {
+        margin: 10px 0;
+        color: $color_white;
+        text-decoration: none;
+        font-weight: 700;
+    }
 }
 
+@media (max-width: 864px) {
+    .footer {
+        &__location {
+            iframe {
+                width: 360px;
+            }
+        }
+    }
+}
 
+@media (max-width: 720px) {
+    .footer {
+        margin-top: 15px;
+
+        &__container {
+            align-items: center;
+        }
+
+        &__location {
+            p {
+                font-size: 1rem;
+            }
+        }
+
+        &__bottom {
+            p {
+                font-size: 13px;
+            }
+        }
+    }
+}

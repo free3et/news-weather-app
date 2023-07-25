@@ -1,8 +1,11 @@
-'use client'
-import { useState, useEffect } from "react";
-import {UsePaginationProps, UsePaginationReturn, Gaps} from '../types';
+'use client';
+import { useState, useEffect } from 'react';
+import { UsePaginationProps, UsePaginationReturn, Gaps } from '../types';
 
-export const usePagination  = ({ contentPerPage, count }: UsePaginationProps): UsePaginationReturn => {
+export const usePagination = ({
+  contentPerPage,
+  count,
+}: UsePaginationProps): UsePaginationReturn => {
   const [page, setPage] = useState(1);
   // like 3 dots that surrounds the immediate pages
   const [gaps, setGaps] = useState<Gaps>({
@@ -21,7 +24,9 @@ export const usePagination  = ({ contentPerPage, count }: UsePaginationProps): U
 
   useEffect(() => {
     if (pageCount > 2) {
-      const temp: number[] = new Array(pageCount - 2).fill(1).map((_, i) => i + 2);
+      const temp: number[] = new Array(pageCount - 2)
+        .fill(1)
+        .map((_, i) => i + 2);
 
       setPagesInBetween(temp);
     }
@@ -36,10 +41,17 @@ export const usePagination  = ({ contentPerPage, count }: UsePaginationProps): U
     let after = false;
     if (page === 1) {
       paginationGroup = pagesInBetween.slice(0, 3);
-    } else if (page === pageCount || page === pageCount - 1 || page === pageCount - 2) {
+    } else if (
+      page === pageCount ||
+      page === pageCount - 1 ||
+      page === pageCount - 2
+    ) {
       paginationGroup = pagesInBetween.slice(-3, pageCount);
     } else if (page === 2) {
-      paginationGroup = pagesInBetween.slice(currentLocation, currentLocation + 3);
+      paginationGroup = pagesInBetween.slice(
+        currentLocation,
+        currentLocation + 3,
+      );
     } else {
       paginationGroup = [page - 1, page, page + 1];
     }

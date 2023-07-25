@@ -1,33 +1,33 @@
-'use client'
-import {useState } from "react";
-import styles from "../News.module.scss";
+'use client';
+import { useState } from 'react';
+import styles from '../News.module.scss';
 
 type GetSearchNews = {
-  getSearchNews: (item: string) => void
-}
+  getSearchNews: (item: string) => void;
+};
 
 export const InputSearchNews = ({ getSearchNews }: GetSearchNews) => {
-  const [value, setValue] = useState<string>("");
+  const [value, setValue] = useState<string>('');
 
   const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
-      e.preventDefault();
-      getSearchNews(value)
-  }
+    e.preventDefault();
+    getSearchNews(value);
+  };
 
   return (
     <div className={`${styles.search_field} col-12 col-md-12`}>
       <form onSubmit={submitHandler}>
-      <input
-        type="text"
-        id="search-input"
-        name="search"
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
-        onBlur={(e) => {
-          getSearchNews(e.target.value);
-          setValue("");
-        }}
-      />
+        <input
+          type='text'
+          id='search-input'
+          name='search'
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+          onBlur={(e) => {
+            getSearchNews(e.target.value);
+            setValue('');
+          }}
+        />
       </form>
     </div>
   );

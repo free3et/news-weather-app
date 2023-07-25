@@ -1,16 +1,17 @@
-'use client'
+'use client';
 import { useState } from 'react';
-import { GetLocation } from "../types";
-import styles from "./Weather.module.scss";
+import { GetLocation } from '../types';
+import styles from './Weather.module.scss';
 
-
-export const InputGetLocationComponent: React.FC<GetLocation> = ({getLocation}) => {
+export const InputGetLocationComponent: React.FC<GetLocation> = ({
+  getLocation,
+}) => {
   const [inputValue, setInputValue] = useState('');
 
   const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    getLocation(inputValue)
-  }
+    getLocation(inputValue);
+  };
 
   return (
     <div className={styles.weather__search}>
@@ -18,12 +19,14 @@ export const InputGetLocationComponent: React.FC<GetLocation> = ({getLocation}) 
         <input
           className={styles.weather__input}
           value={inputValue}
-          onChange={(event: React.ChangeEvent<HTMLInputElement>) => setInputValue(event.target.value)}
+          onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+            setInputValue(event.target.value)
+          }
           onBlur={() => getLocation(inputValue)}
-          placeholder="Enter Location"
-          type="text"
+          placeholder='Enter Location'
+          type='text'
         />
-        </form>
-      </div>
+      </form>
+    </div>
   );
 };

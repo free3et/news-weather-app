@@ -1,68 +1,65 @@
-@import "../../common.scss";
+@import '../../common.scss';
+
 .currency {
-  background-color: $color_light_grey;
-  color: $color_black;
-  padding: 0;
-  margin-top: 2rem;
+    margin-top: 2rem;
+    padding: 0 0 .5rem;
+    background-color: $color_light_grey;
+    color: $color_black;
 
-  .title {
-    background-color: $color_main;
-    color: $color_white;
-    padding: 0.5rem;
-    margin: 0;
-    font-size: .8em;
-    text-align: center;
-    text-transform: uppercase;
-  }
+    .title {
+        margin: 0;
+        padding: 0.5rem;
+        background-color: $color_main;
+        color: $color_white;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 0.8em;
+    }
 
-  .row {
-    display: flex;
-    background-color: $color_white;
-    margin: 1rem;
-    border-bottom: 3px solid $color_main;
-    padding: 1rem 0;
-    overflow-x: hidden;
-    justify-content: space-between;
+    .row {
+        display: flex;
+        overflow-x: hidden;
+        justify-content: space-between;
+        margin: 1rem;
+        padding: 1rem 0;
+        border-bottom: 3px solid $color_main;
+        background-color: $color_white;
+    }
 
-  }
+    h4 {
+        margin: 0;
+    }
 
-  h4 {
-    margin: 0;
-  }
+    .row_value {
+        width: 100%;
+        text-align: center;
+    }
 
-  .row_value {
-    text-align: center;
-    width: 100%;
-  }
+    h5 {
+        padding: 0 5px;
+        color: #f33434;
+        text-align: center;
+    }
 
-  h5 {
-    color: #f33434;
-    text-align: center;
-    padding: 0 5px;
-  }
+    .input {
+        width: 100%;
+        text-align: center;
+        font-size: 0.9rem;
+    }
 
-  .input {
-    text-align: center;
-    width: 100%;
-    font-size: .9rem;
-  }
-  .input:focus-visible {
-    outline: 1px solid $color_white;
-  }
-
-
+    .input:focus-visible {
+        outline: 1px solid $color_white;
+    }
 }
 
 @media (max-width: 991px) {
-  .currency {
-    margin: 0 auto;
-
-  }
-
+    .currency {
+        margin: 0 auto;
+    }
 }
-@media (max-width: 520px) {
-  .currency {
-    margin: 2rem auto;
 
-  }
+@media (max-width: 520px) {
+    .currency {
+        margin: 2rem auto;
+    }
 }

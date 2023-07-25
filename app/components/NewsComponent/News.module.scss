@@ -5,10 +5,10 @@
     position: relative;
     display: flex;
     justify-content: flex-end;
+    width: 100%;
     padding: 0.5em 1.5em;
     border-left: 1px solid rgba(155, 154, 151, 0.4);
     background: $color_grey;
-    width: 100%;
 
     &:after {
         content: '';
@@ -64,14 +64,14 @@
         border-right: 1px solid $color_white;
         background-color: $color_secondary;
         color: $color_white;
+        text-decoration: none;
         text-transform: uppercase;
         font-weight: 700;
-        text-decoration: none;
         font-size: 0.8em;
         transition: all 0.3s ease;
 
         &:last-child {
-            border-right: none;
+            border-right: 2px solid $color_secondary;
         }
 
         &:hover {
@@ -98,7 +98,6 @@
 }
 
 .newsCard_wrap {
-
     .newsCard_thumb_img {
         position: relative;
         width: 100%;
@@ -127,10 +126,10 @@
 
             a {
                 color: $color_black;
+                text-decoration: none;
                 font-weight: 700;
                 font-size: 0.9em;
                 line-height: 1.2;
-                text-decoration: none;
             }
         }
 
@@ -138,7 +137,6 @@
             width: 20px;
             height: auto;
             padding-right: 10px;
-
         }
 
         .userInfo_wrapper {
@@ -150,13 +148,12 @@
                 color: $color_grey_news_info;
 
                 p {
+                    margin: 0.5rem 0;
                     text-align: left;
                     font-size: 0.8em;
                     line-height: 1.5;
-                    margin: .5rem 0;
                 }
             }
-
         }
 
         .userDate_info {

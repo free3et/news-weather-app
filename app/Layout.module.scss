@@ -1,92 +1,88 @@
 @import './common.scss';
 
 .body {
-  background-color: var(--color_white);
-  margin: 0;
+    margin: 0;
+    background-color: var(--color_white);
 }
 
 .content_wrapper {
-  display: flex;
+    display: flex;
 
-  h2 {
-    display: block;
-    margin: 0;
-    padding: 6px;
-    background: $color_main;
-    color: $color_white;
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 0.8em;
-    text-align: center;
-  }
+    h2 {
+        display: block;
+        margin: 0;
+        padding: 6px;
+        background: $color_main;
+        color: $color_white;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 0.8em;
+    }
 }
 
 .news_top_navigation {
-  display: flex;
-
+    display: flex;
 }
 
 .news_wrapper {
-  margin-top: 30px;
+    margin-top: 30px;
 
-  article {
-    margin: 0px 0 20px;
-    width: 49%;
-    padding: 0;
+    article {
+        width: 49%;
+        margin: 0 0 20px;
+        padding: 0;
 
-    &:last-child {
-      padding: 0;
+        &:last-child {
+            padding: 0;
+        }
     }
-  }
 }
 
 .weather_currency_wrapper {
-  margin-top: 30px;
+    margin-top: 30px;
 }
 
 @media (max-width: 991px) {
-  .content_wrapper {
-    display: flex;
-    flex-wrap: wrap-reverse;
-  }
-
-  .news_wrapper,
-  .weather_currency_wrapper {
-    margin-top: 20px;
-    padding: 0;
-  }
-
-  .weather_currency_wrapper {
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 1.5rem;
-  }
-}
-
-@media (max-width: 767px) {
-  .news_wrapper,
-  .weather_currency_wrapper {
-    margin-top: 2rem;
-  }
-
-  .news_wrapper {
-    article {
-      padding: 0;
+    .content_wrapper {
+        display: flex;
+        flex-wrap: wrap-reverse;
     }
-  }
 
+    .news_wrapper,
+    .weather_currency_wrapper {
+        margin-top: 20px;
+        padding: 0;
+    }
+
+    .weather_currency_wrapper {
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 1.5rem;
+    }
 }
 
 @media (max-width: 767px) {
-  .weather_currency_wrapper {
-    flex-direction: column;
-  }
+    .news_wrapper,
+    .weather_currency_wrapper {
+        margin-top: 2rem;
+    }
 
+    .news_wrapper {
+        article {
+            padding: 0;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .weather_currency_wrapper {
+        flex-direction: column;
+    }
 }
 
 @media (max-width: 520px) {
-  .news_wrapper {
-    width: auto;
-  }
-
+    .news_wrapper {
+        width: auto;
+    }
 }
