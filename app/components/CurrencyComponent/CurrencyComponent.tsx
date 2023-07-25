@@ -35,7 +35,7 @@ export const CurrencyComponent = () => {
         </div>
         {isLoading && <Loader />}
         {data &&
-          filterCurrency(data)?.map((element: Currency, i) => (
+          filterCurrency(data)?.map((element: Currency, i: number) => (
             <InputGetCurrency curency={element} key={i} />
           ))}
       </div>
