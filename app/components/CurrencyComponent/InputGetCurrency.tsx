@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { FormEvent, useState } from 'react';
 import { CurrencyElement } from '../types';
 import style from './Currency.module.scss';
 
@@ -7,7 +7,7 @@ export const InputGetCurrency = (curency: CurrencyElement) => {
   const [value, setValue] = useState(1);
   const { cc, rate } = curency.curency;
 
-  const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
+  const submitHandler = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
   };
 

@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { FormEvent, useState } from 'react';
 import styles from '../News.module.scss';
 
 type GetSearchNews = {
@@ -9,7 +9,7 @@ type GetSearchNews = {
 export const InputSearchNews = ({ getSearchNews }: GetSearchNews) => {
   const [value, setValue] = useState<string>('');
 
-  const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
+  const submitHandler = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     getSearchNews(value);
   };

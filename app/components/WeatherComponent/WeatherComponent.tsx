@@ -2,8 +2,9 @@ import styles from './Weather.module.scss';
 import { useGetWeatherQuery } from '@/app/redux/features/weatherSlice';
 import { Loader } from '../Loader/Loader';
 import { WeatherComponentProps } from '../types';
+import { FC } from 'react';
 
-export const WeatherComponent: React.FC<WeatherComponentProps> = ({
+export const WeatherComponent: FC<WeatherComponentProps> = ({
   location,
 }) => {
   const imgUrl = 'https://openweathermap.org/img/wn';

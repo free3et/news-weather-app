@@ -1,10 +1,9 @@
 import styles from './Weather.module.scss';
 import { useGetForecastQuery } from '@/app/redux/features/weatherSlice';
 import { Forecast, WeatherComponentProps } from '../types';
+import { FC } from 'react';
 
-export const ForecastComponent: React.FC<WeatherComponentProps> = ({
-  location,
-}) => {
+export const ForecastComponent: FC<WeatherComponentProps> = ({ location }) => {
   const { data = [], isError } = useGetForecastQuery(location);
 
   const imgUrl = 'https://openweathermap.org/img/wn';
