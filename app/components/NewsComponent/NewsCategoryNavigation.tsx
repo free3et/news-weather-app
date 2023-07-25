@@ -14,6 +14,7 @@ type Categories = {
   [key: string]: string;
 };
 
+// eslint-disable-next-line no-unused-vars
 type GetCategory = {
   getCategory: (item: string) => void;
 };

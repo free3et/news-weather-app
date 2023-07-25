@@ -2,6 +2,7 @@
 import { FormEvent, useState } from 'react';
 import styles from '../News.module.scss';
 
+// eslint-disable-next-line no-unused-vars
 type GetSearchNews = {
   getSearchNews: (item: string) => void;
 };
