@@ -1,6 +1,4 @@
-'use client';
-
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styles from './GoToTopBtn.module.scss';
 
 export const GoToTopButton = () => {
@@ -22,7 +20,13 @@ export const GoToTopButton = () => {
     });
   };
 
-  window.addEventListener('scroll', toggleVisible);
+  useEffect(() => {
+    window.addEventListener('scroll', toggleVisible);
+
+    return () => {
+      window.removeEventListener('scroll', toggleVisible);
+    };
+  }, []);
 
   return (
     <button
