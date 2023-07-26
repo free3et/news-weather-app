@@ -32,14 +32,14 @@ export default function Home() {
           <NewsCategoryNavigation getCategory={getCategory} />
         </div>
         <div className='row'>
-          <div className={`${stylesLayout.news_top_navigation} col-lg-12`}>
+          <div className={`${stylesLayout.news_top_navigation} col-12`}>
             <InputSearchNews getSearchNews={getSearchNews} />
           </div>
         </div>
-        <div className='container'>
+        <div className='row'>
           <div className={stylesLayout.content_wrapper}>
             <div
-              className={`${stylesLayout.news_wrapper} col-sm-12 col-md-7 col-lg-8`}
+              className={`${stylesLayout.news_wrapper} col-sm-12 col-md-8 col-lg-8`}
             >
               {search === '' && (
                 <>

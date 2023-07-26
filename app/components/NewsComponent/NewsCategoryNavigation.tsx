@@ -20,7 +20,7 @@ type GetCategory = {
 
 export const NewsCategoryNavigation = ({ getCategory }: GetCategory) => {
   return (
-    <div className={`${styles.news_navigation} col-lg-12`}>
+    <div className={`${styles.news_navigation} col-12`}>
       {Object.values(category).map((item, index) => (
         <a href={`#${item}`} key={index} onClick={() => getCategory(item)}>
           {item}
