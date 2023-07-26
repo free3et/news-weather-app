@@ -62,5 +62,10 @@
 @media (max-width: 520px) {
     .currency {
         margin: 2rem 0 0;
+
+        .row {
+            padding: .6rem 0;
+            border-bottom: 2px solid $color_main;
+        }
     }
 }

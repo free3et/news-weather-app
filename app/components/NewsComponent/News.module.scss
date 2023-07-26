@@ -200,7 +200,8 @@
         justify-content: center;
 
         &:after {
-            right: calc(100% - 515px);
+            top: 10px;
+            right: calc(100% - 530px);
         }
 
         input {
@@ -216,6 +217,20 @@
 }
 
 @media (max-width: 767px) {
+    .search_field {
+        &:after {
+            right: calc(100% - 500px);
+        }
+    }
+
+    .newsCard_wrap {
+        .description {
+            min-height: 35px;
+        }
+    }
+}
+
+@media (max-width: 520px) {
     .news_navigation {
         flex-direction: column;
         height: auto;
@@ -228,13 +243,7 @@
 
     .search_field {
         &:after {
-            right: calc(100% - 350px);
-        }
-    }
-
-    .newsCard_wrap {
-        .description {
-            min-height: 35px;
+            right: calc(100% - 330px);
         }
     }
 }

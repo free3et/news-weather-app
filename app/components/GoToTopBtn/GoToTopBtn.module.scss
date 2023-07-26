@@ -1,0 +1,36 @@
+@import '../../common.scss';
+
+.goToTopButton {
+    position: fixed;
+    z-index: 49;
+    right: 30px;
+    bottom: 20px;
+    width: 45px;
+    height: 45px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    background-color: $color_secondary;
+    color: $color_white;
+    cursor: pointer;
+
+    h3 {
+        margin: 0;
+        font-size: 1.5rem;
+        line-height: 1;
+    }
+
+    @media (max-width: 576px) {
+        right: 15px;
+        bottom: 10px;
+        width: 40px;
+        height: 40px;
+    }
+
+    @media (max-width: 768px) {
+        right: 15px;
+        bottom: 10px;
+        width: 40px;
+        height: 40px;
+    }
+}

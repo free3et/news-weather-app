@@ -22,7 +22,7 @@
         }
     }
 
-    @media (max-width: 767px) {
+    @media (max-width: 768px) {
         flex: 1;
     }
 }
@@ -114,13 +114,15 @@
     }
 
     @media (max-width: 576px) {
-        .pressure,
         .speed {
             display: none;
         }
+
+        &__bottom {
+            max-height: auto;
+        }
     }
 }
-
 
 .container {
     display: flex;

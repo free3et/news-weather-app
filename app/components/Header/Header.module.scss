@@ -124,24 +124,18 @@
 
     @media (max-width: 520px) {
         .header {
-            height: 6rem;
+            height: 5rem;
 
             .row {
                 display: flex;
-                flex-direction: column;
+                flex-wrap: wrap;
+                justify-content: center;
                 justify-content: center;
             }
 
-            .logo_portal,
             .social_network {
                 justify-content: center;
-                margin: 5px auto;
-            }
-
-            .social_network {
-                ul li img {
-                    width: 1.4rem;
-                }
+                margin: 10px auto;
             }
         }
     }

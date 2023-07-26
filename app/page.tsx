@@ -11,6 +11,7 @@ import { WeatherComponentWrapper } from './components/WeatherComponent/WeatherCo
 import { Header } from './components/Header/Header';
 import { Footer } from './components/Footer/Footer';
 import { CurrencyComponent } from './components/CurrencyComponent/CurrencyComponent';
+import { GoToTopButton } from './components/GoToTopBtn/GoToTopBtn';
 
 export default function Home() {
   const [category, setCategory] = useState('technology');
@@ -72,6 +73,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <GoToTopButton />
       <Footer />
     </main>
   );
