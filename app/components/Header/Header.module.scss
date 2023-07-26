@@ -12,10 +12,15 @@
     box-shadow: 0 2px 4px rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.08);
     color: $color_black;
 
+    .row {
+        display: flex;
+        align-items: center;
+    }
+
     .logo_portal {
         display: flex;
         align-items: flex-end;
-        padding-left: 0.4rem;
+        padding: 0;
         font-weight: 700;
         font-size: 20px;
     }
@@ -37,6 +42,7 @@
     }
 
     .date {
+        padding: 0;
         font-weight: 700;
         font-size: 1.2rem;
         line-height: 1.75;
@@ -57,7 +63,18 @@
     }
 
     .social_network {
-        display: block;
+        display: flex;
+        justify-content: flex-end;
+        padding: 0;
+    }
+}
+
+@media (max-width: 1024px) {
+    .header {
+        .date {
+            font-size: 1.1rem;
+            line-height: 2;
+        }
     }
 }
 
@@ -66,7 +83,7 @@
         height: 3rem;
 
         .logo_portal {
-            font-size: 1rem;
+            font-size: 0.85rem;
         }
 
         .logo_letter {
@@ -75,12 +92,10 @@
 
         .date {
             text-align: center;
-            font-size: 1rem;
+            font-size: 0.85rem;
         }
 
         .social_network {
-            right: -7%;
-
             ul li img {
                 width: 1.6rem;
             }
@@ -89,8 +104,6 @@
 
     @media (max-width: 720px) {
         .header {
-            height: auto;
-
             .container {
                 width: 100%;
             }
@@ -106,9 +119,29 @@
             .date {
                 font-size: 0.8rem;
             }
+        }
+    }
+
+    @media (max-width: 520px) {
+        .header {
+            height: 6rem;
+
+            .row {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .logo_portal,
+            .social_network {
+                justify-content: center;
+                margin: 5px auto;
+            }
 
             .social_network {
-                right: -15%;
+                ul li img {
+                    width: 1.4rem;
+                }
             }
         }
     }

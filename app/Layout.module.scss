@@ -75,14 +75,18 @@
     }
 }
 
-@media (max-width: 767px) {
-    .weather_currency_wrapper {
-        flex-direction: column;
-    }
-}
 
 @media (max-width: 520px) {
+    .weather_currency_wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+    flex-direction: column;
+    }
+
     .news_wrapper {
-        width: auto;
+        article {
+            width: auto;
+        }
     }
 }

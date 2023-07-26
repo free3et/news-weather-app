@@ -64,7 +64,7 @@ export default function Home() {
             </div>
 
             <div
-              className={`${stylesLayout.weather_currency_wrapper} col-md-4 col-sm-12 col-lg-4 col-12`}
+              className={`${stylesLayout.weather_currency_wrapper} col-xs-12 col-sm-12 col-md-4 col-sm-12 col-lg-4`}
             >
               <WeatherComponentWrapper />
               <CurrencyComponent />

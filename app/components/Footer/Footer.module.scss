@@ -48,20 +48,16 @@
         text-decoration: none;
         font-weight: 700;
     }
-}
 
-@media (max-width: 864px) {
-    .footer {
+    @media (max-width: 864px) {
         &__location {
             iframe {
-                width: 360px;
+                width: auto;
             }
         }
     }
-}
 
-@media (max-width: 720px) {
-    .footer {
+    @media (max-width: 720px) {
         margin-top: 15px;
 
         &__container {
@@ -78,6 +74,14 @@
             p {
                 font-size: 13px;
             }
+        }
+    }
+
+    @media (max-width: 520px) {
+        &__container {
+            align-items: center;
+            justify-content: center;
+            text-align: center;
         }
     }
 }

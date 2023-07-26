@@ -16,10 +16,10 @@ export const Header = () => {
 
   return (
     <header className={styles.header}>
-      <div className='container'>
-        <div className='row'>
+      <div className={styles.container}>
+        <div className={styles.row}>
           <div
-            className={`${styles.logo_portal} col-xs-3 col-sm-4 col-md-4 col-lg-4`}
+            className={`${styles.logo_portal} col-xs-12 col-sm-4 col-md-4 col-lg-4`}
           >
             <ul className={styles.logo}>
               <li className={styles.logo_letter}>A</li>
@@ -28,11 +28,13 @@ export const Header = () => {
             </ul>
             <span>NEWS</span>
           </div>
-          <div className={`${styles.date} col-xs-3 col-sm-3 col-md-3 col-lg-4`}>
+          <div
+            className={`${styles.date} col-xs-12 col-sm-4 col-md-4 col-lg-4`}
+          >
             {date}
           </div>
           <div
-            className={`${styles.social_network} col-xs-3 col-sm-3 col-md-3 col-lg-3`}
+            className={`${styles.social_network} col-xs-12 col-sm-4 col-md-4 col-lg-4`}
           >
             <ul>
               <li>

@@ -3,8 +3,7 @@ import styles from './Footer.module.scss';
 export const Footer = () => {
   return (
     <footer className={styles.footer}>
-      <div className='container'>
-        <div className={styles.footer__container}>
+         <div className={styles.footer__container}>
           <div className={styles.footer__contact}>
             <p>EDITORIAL CONTACTS</p>
             <a
@@ -40,7 +39,7 @@ export const Footer = () => {
               referrerPolicy='no-referrer-when-downgrade'
             ></iframe>
           </div>
-        </div>
+       
       </div>
       <div className={styles.footer__bottom}>
         <p>©{new Date().getFullYear()} ABC News All rights reserved</p>
